@@ -18,7 +18,7 @@ $light-grey-1: #d5dbde;
 	grid-template-rows: 3vh 10vh 20vh 10vh repeat(2, 10vh);
 
 	&__title {
-		&-main {
+		&--main {
 			font-size: 4vh;
 		}
 	}
@@ -40,6 +40,7 @@ $light-grey-1: #d5dbde;
 		text-decoration: none;
 		color: #6f7dff;
 	}
+
 	&__image {
 		background-image: url(../../images/person.png);
 		background-repeat: no-repeat;
@@ -56,7 +57,6 @@ $light-grey-1: #d5dbde;
 	grid-row: 3/ 7;
 
 	display: grid;
-
 	grid-template-rows: 6vh 1px 16vh 6vh;
 	grid-row-gap: 1vh;
 	width: 60%;
@@ -65,22 +65,25 @@ $light-grey-1: #d5dbde;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		&-value {
+
+		&--value {
 			font-size: 3vh;
 		}
 	}
 
 	&__list {
 		margin-top: 1.5vh;
+	}
 
-		&--title {
-			list-style: none;
-		}
-		&--item {
-			margin-top: 1.5vh;
-			&-icon {
-				margin-right: 1vw;
-			}
+	&__title {
+		list-style: none;
+	}
+
+	&__item {
+		margin-top: 1.5vh;
+
+		&--icon {
+			margin-right: 1vw;
 		}
 	}
 

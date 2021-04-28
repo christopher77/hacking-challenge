@@ -1,5 +1,4 @@
 $red: #ef3340;
-
 $light-grey-1: #d5dbde;
 $light-grey-2: #707070;
 $white: #fff;
@@ -7,7 +6,7 @@ $white: #fff;
 .home {
 	grid-column: 6 / 9;
 	grid-row: 2 / 9;
-	padding: 4rem; //agrupar los padding
+	padding: 4rem;
 	padding-top: 2vh;
 
 	display: grid;
@@ -55,5 +54,5 @@ $white: #fff;
 }
 
 a {
-	color: #707070;
+	color: $light-grey-2;
 }

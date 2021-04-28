@@ -12,11 +12,11 @@ const Plan = () => {
 			<Header />
 			<div className="plan">
 				<div className="plan__back">
-					<img src={back} alt="back" className="auto__back-image" />
+					<img src={back} alt="back" className="auto__back--image" />
 					<span>volver</span>
 				</div>
 				<div className="plan__title">
-					<div className="plan__title-main">Mira las coberturas</div>
+					<div className="plan__title--main">Mira las coberturas</div>
 					<span>Conoce las coberturas para su plan</span>
 				</div>
 				<div className="details">
@@ -34,7 +34,7 @@ const Plan = () => {
 			<div className="right">
 				<div className="right__price">
 					<div>
-						<div className="right__price-value">$35.00</div>
+						<div className="right__price--value">$35.00</div>
 						<span>mensuales</span>
 					</div>
 					<img src={shield} alt="shield" />
@@ -42,18 +42,18 @@ const Plan = () => {
 				<hr />
 				<div className="right__list">
 					el precio incluye:
-					<ul className="right__list--title">
-						<li className="right__list--item">
-							<img src={check} alt="check" className="right__list--item-icon" />{" "}
+					<ul className="right__title">
+						<li className="right__item">
+							<img src={check} alt="check" className="right__item--icon" />{" "}
 							Llanta de repuesto
 						</li>
 						<li className="right__list--item">
-							<img src={check} alt="check" className="right__list--item-icon" />{" "}
+							<img src={check} alt="check" className="right__item--icon" />{" "}
 							analisis de motor
 						</li>
 						<li className="right__list--item">
-							<img src={check} alt="check" className="right__list--item-icon" />{" "}
-							Aros gratis
+							<img src={check} alt="check" className="right__item--icon" /> Aros
+							gratis
 						</li>
 					</ul>
 				</div>

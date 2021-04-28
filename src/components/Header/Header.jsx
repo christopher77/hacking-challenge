@@ -8,10 +8,12 @@ const Header = () => {
 		<div className="header">
 			<img src={logo} alt="" />
 			<div className="header__info">
-				<div className="header__info--ask">¿Tienes alguna duda?</div>
-				<div className="header__info--number">
+				<div className="header__question">¿Tienes alguna duda?</div>
+				<div className="header__number">
 					<img src={phone} alt="phone" />
-					<div className="header__info--number-value">(01)411 6001</div>
+					<div className="header__number--value">
+						(01)411 6001
+					</div>
 				</div>
 			</div>
 		</div>

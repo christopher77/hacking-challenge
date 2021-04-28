@@ -38,9 +38,9 @@ function HomeData(props) {
 				<input
 					className="terms__check"
 					type="checkbox"
-					id="terminos"
-					name="terminos"
-					value="terminos"
+					id="terms"
+					name="terms"
+					value="terms"
 					required={true}
 				/>
 				<label className="terms__label">

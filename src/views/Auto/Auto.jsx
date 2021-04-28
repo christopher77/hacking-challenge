@@ -33,14 +33,14 @@ const Auto = () => {
 					<span>volver</span>
 				</div>
 				<div className="auto__title">
-					¡Hola,<span className="auto__title-red"> Juan!</span>
+					¡Hola,<span className="auto__title--red"> Juan!</span>
 					<p className="auto__simple">Completa los datos de tu auto</p>
 				</div>
 				<SimpleInput {...propsAño} />
 				<SimpleInput {...propsMarca} />
 				<div className="auto__gas">
-					<div className="auto__gas-question">¿Tu auto es a gas?</div>
-					<div className="auto__gas-radios">
+					<div className="auto__gas--question">¿Tu auto es a gas?</div>
+					<div className="auto__gas--radios">
 						<input type="radio" name="gas" value="si" />
 						si<br></br>
 						<input type="radio" name="gas" value="no" checked />
@@ -48,11 +48,11 @@ const Auto = () => {
 					</div>
 				</div>
 				<div className="auto__secure">
-					<div className="auto__secure-details">
+					<div className="auto__secure--details">
 						<span>Indica la suma asegurada</span>
 						<span>Min $12.500 Max $16.500</span>
 					</div>
-					<div className="auto__secure-amount">$14.300</div>
+					<div className="auto__secure--amount">$14.300</div>
 				</div>
 
 				<button class="auto__button" onClick={goPlan}>
