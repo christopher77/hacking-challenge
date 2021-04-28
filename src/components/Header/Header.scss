@@ -1,0 +1,28 @@
+.header {
+	grid-column: 1/ 12;
+	grid-row-gap: 1/ 2;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	border-color: #f7f8fc;
+	padding-left: 5vw;
+	padding-right: 5vw;
+	// z-index: 5;
+	&__info {
+		display: flex;
+		align-items: center;
+		font-size: 1.5vh;
+
+		&--number {
+			display: flex;
+			color: #6f7dff;
+			margin-left: 2vw;
+
+			&-value {
+				margin-left: 0.2vw;
+			}
+		}
+	}
+}
