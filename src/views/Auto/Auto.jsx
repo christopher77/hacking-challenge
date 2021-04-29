@@ -15,6 +15,7 @@ import {
 } from "../../redux/action/action-hooks";
 import add from "../../images/add.png";
 import remove from "../../images/remove.png";
+import Modal from "../../components/ui/modal";
 
 const Auto = () => {
 	const years = [2017, 2018, 2019, 2020, 2021];
@@ -26,6 +27,7 @@ const Auto = () => {
 	const name = useName();
 	const addAmount = useAddAmount();
 	const [amount, setAmount] = React.useState(14300);
+	const [showModal, setShowModal] = React.useState(false);
 
 	function handleChangeYear(event) {
 		console.log(event.target.value);
@@ -47,9 +49,16 @@ const Auto = () => {
 			addAmount(amount);
 			navigate("/plan");
 		} else {
-			return;
+			openModal();
 		}
 	}
+	const openModal = () => {
+		setShowModal(true);
+	};
+
+	const closeModal = () => {
+		setShowModal(false);
+	};
 
 	return (
 		<div className="auto__container">
@@ -133,6 +142,18 @@ const Auto = () => {
 					click aqui
 				</a>
 			</div>
+
+			{showModal && (
+				<Modal>
+					<h2 className="messageTitle">Monto Actual ${amount} no valido</h2>
+					<h3 className="messageModal">
+						Monto valido desde $12500 hasta $16500
+					</h3>
+					<button className="buttonConfirm" onClick={closeModal}>
+						OK
+					</button>
+				</Modal>
+			)}
 		</div>
 	);
 };
