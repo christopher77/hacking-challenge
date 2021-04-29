@@ -6,6 +6,8 @@ function SimpleInput(props) {
 
 	function onChangeInput(event) {
 		setProperty(event.target.value);
+		// const realValue = event.target.value;
+		// realValue.match(/[0-9]{8}$/) ? setProperty(realValue) : console.log("no");
 	}
 
 	return props.complex ? (

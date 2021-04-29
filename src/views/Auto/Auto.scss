@@ -21,8 +21,9 @@ $red: #ef3340;
 		display: flex;
 		text-transform: uppercase;
 		align-items: center;
+		cursor: pointer;
 
-		&-image {
+		&--image {
 			margin-right: 1vw;
 		}
 	}
@@ -112,6 +113,7 @@ $red: #ef3340;
 		height: 20%;
 	}
 }
+
 .help {
 	grid-column: 8/ 10;
 	grid-row: 4/ 7;
@@ -145,8 +147,7 @@ $red: #ef3340;
 		color: #6f7dff;
 	}
 }
+
 hr {
 	height: 0;
-	background-color: $red;
-	color: rebeccapurple;
 }

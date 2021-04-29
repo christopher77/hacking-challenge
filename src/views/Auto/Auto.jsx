@@ -22,14 +22,10 @@ const Auto = () => {
 	const addYearCar = useAddYearCar();
 	const addBrand = useAddBrand();
 	const addGas = useAddGas();
+
 	const name = useName();
 	const addAmount = useAddAmount();
 	const [amount, setAmount] = React.useState(14300);
-
-	function goPlan() {
-		addAmount(amount);
-		navigate("/plan");
-	}
 
 	function handleChangeYear(event) {
 		console.log(event.target.value);
@@ -46,13 +42,22 @@ const Auto = () => {
 		addGas(gas);
 	}
 
+	function goPlan() {
+		if (amount <= 16500 && amount >= 12500) {
+			addAmount(amount);
+			navigate("/plan");
+		} else {
+			return;
+		}
+	}
+
 	return (
 		<div className="auto__container">
 			<Header />
-			<Aside />
+			<Aside step={1} />
 			<div className="auto">
-				<div className="auto__back">
-					<img src={back} alt="back" className="auto__back-image" />
+				<div className="auto__back" onClick={() => navigate("/")}>
+					<img src={back} alt="back" className="auto__back--image" />
 					<span>volver</span>
 				</div>
 				<div className="auto__title">
@@ -101,7 +106,7 @@ const Auto = () => {
 				<div className="auto__secure">
 					<div className="auto__secure--details">
 						<span>Indica la suma asegurada</span>
-						<span>Min $12.500 Max $16.500</span>
+						<span>Min $12,500 Max $16,500</span>
 					</div>
 					<div className="auto__secure--amount">
 						<img
