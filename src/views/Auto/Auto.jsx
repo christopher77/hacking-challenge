@@ -1,13 +1,26 @@
 import React from "react";
 import Aside from "../../components/Aside/Aside";
 import Header from "../../components/Header/Header";
-import SimpleInput from "../../components/SimpleInput/SimpleInput";
 import "./Auto.scss";
 import car from "../../images/icon_car.svg";
 import back from "../../images/icon_Back.png";
 import { navigate } from "@reach/router";
+import { useName } from "../../redux/selectors/selectors";
+import chevron from "../../images/chevrot.png";
+import {
+	useAddYearCar,
+	useAddBrand,
+	useAddGas,
+} from "../../redux/action/action-hooks";
 
 const Auto = () => {
+	const years = [2017, 2018, 2019, 2020, 2021];
+	const brands = ["volkswagen", "Toyota", "Mercedes", "Ferrari"];
+	const addYearCar = useAddYearCar();
+	const addBrand = useAddBrand();
+	const addGas = useAddGas();
+
+	const name = useName();
 	const propsAño = {
 		nombre: "Año",
 		tipo: "string",
@@ -23,6 +36,22 @@ const Auto = () => {
 	function goPlan() {
 		navigate("/plan");
 	}
+
+	function handleChangeYear(event) {
+		console.log(event.target.value);
+		addYearCar(event.target.value);
+	}
+
+	function handleChangeBrand(event) {
+		console.log(event.target.value);
+		addBrand(event.target.value);
+	}
+	function onChangeValue(event) {
+		console.log(event.target.value);
+		const gas = event.target.value === "si" ? true : false;
+		addGas(gas);
+	}
+
 	return (
 		<div className="auto__container">
 			<Header />
@@ -33,17 +62,43 @@ const Auto = () => {
 					<span>volver</span>
 				</div>
 				<div className="auto__title">
-					¡Hola,<span className="auto__title--red"> Juan!</span>
+					¡Hola,<span className="auto__title--red"> {name}!</span>
 					<p className="auto__simple">Completa los datos de tu auto</p>
 				</div>
-				<SimpleInput {...propsAño} />
-				<SimpleInput {...propsMarca} />
+
+				<div className="combo">
+					<select
+						className="combo__select"
+						onChange={handleChangeYear}
+						name="year"
+						id="year"
+					>
+						{years.map((year) => (
+							<option value={year}>{year}</option>
+						))}
+					</select>
+					<img src={chevron} alt="chevron" className="combo__chevron" />
+				</div>
+
+				<div className="combo">
+					<select
+						className="combo__select"
+						onChange={handleChangeBrand}
+						name="brand"
+						id="brand"
+					>
+						{brands.map((brand) => (
+							<option value={brand}>{brand}</option>
+						))}
+					</select>
+					<img src={chevron} alt="chevron" className="combo__chevron" />
+				</div>
 				<div className="auto__gas">
 					<div className="auto__gas--question">¿Tu auto es a gas?</div>
-					<div className="auto__gas--radios">
+					<div className="auto__gas--radios" onChange={onChangeValue}>
 						<input type="radio" name="gas" value="si" />
 						si<br></br>
-						<input type="radio" name="gas" value="no" checked />
+						<input type="radio" name="gas" value="no" />
 						no
 					</div>
 				</div>
@@ -54,8 +109,7 @@ const Auto = () => {
 					</div>
 					<div className="auto__secure--amount">$14.300</div>
 				</div>
-
-				<button class="auto__button" onClick={goPlan}>
+				<button className="auto__button" onClick={goPlan}>
 					continuar
 				</button>
 			</div>

@@ -3,7 +3,7 @@ $white: #f7f8fc;
 
 .header {
 	grid-column: 1/ 12;
-	grid-row-gap: 1/ 2;
+	grid-row: 1/ 2;
 
 	display: flex;
 	justify-content: space-between;
@@ -12,6 +12,7 @@ $white: #f7f8fc;
 	border-color: $white;
 	padding-left: 5vw;
 	padding-right: 5vw;
+	opacity: 90%;
 	// z-index: 5;
 	&__info {
 		display: flex;

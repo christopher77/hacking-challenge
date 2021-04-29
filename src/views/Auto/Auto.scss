@@ -48,7 +48,7 @@ $red: #ef3340;
 			flex-direction: column;
 		}
 	}
-	
+
 	&__button {
 		height: 100%;
 		width: 50%;
@@ -76,6 +76,31 @@ $red: #ef3340;
 	}
 }
 
+.combo {
+	background: #fff;
+	padding: 1.2rem;
+	border: 3px solid #f0f2fa;
+	border-radius: 10px;
+
+	display: flex;
+	align-items: center;
+
+	&__select {
+		height: 100%;
+		width: 100%;
+		position: relative;
+		font-size: 17px;
+		background-color: $white;
+		border-style: none;
+		appearance: none;
+		outline: none;
+
+	}
+
+	&__chevron {
+		height: 20%;
+	}
+}
 .help {
 	grid-column: 8/ 10;
 	grid-row: 4/ 7;

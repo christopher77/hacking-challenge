@@ -1,7 +1,14 @@
 import "./SimpleInput.scss";
+import React from "react";
 
 function SimpleInput(props) {
-	return props.value === "complex" ? (
+	const setProperty = props.setProperty;
+
+	function onChangeInput(event) {
+		setProperty(event.target.value);
+	}
+
+	return props.complex ? (
 		<div className="identification">
 			<select className="identification__select" name="document" id="document">
 				<option value="dni">DNI</option>
@@ -14,7 +21,7 @@ function SimpleInput(props) {
 					className="identification__input"
 					maxLength={props.max}
 					type={props.tipo}
-					onChange={props.onChange}
+					onChange={onChangeInput}
 					autoFocus={true}
 					required
 				></input>
@@ -27,6 +34,7 @@ function SimpleInput(props) {
 				<input
 					className="wrapper__input"
 					maxLength={props.max}
+					onChange={onChangeInput}
 					type={props.tipo}
 					required
 				/>

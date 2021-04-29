@@ -5,12 +5,12 @@ $white: #fff;
 
 .home {
 	grid-column: 6 / 9;
-	grid-row: 2 / 9;
-	padding: 4rem;
-	padding-top: 2vh;
+	grid-row: 3 / 10;
+	padding: 5rem;
+	padding-top: 3vh;
 
 	display: grid;
-	grid-template-rows: 10vh repeat(5, 1fr);
+	grid-template-rows: 5vh repeat(5, 8vh);
 	grid-row-gap: 2vh;
 
 	&__title {
