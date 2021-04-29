@@ -11,7 +11,10 @@ import {
 	useAddYearCar,
 	useAddBrand,
 	useAddGas,
+	useAddAmount,
 } from "../../redux/action/action-hooks";
+import add from "../../images/add.png";
+import remove from "../../images/remove.png";
 
 const Auto = () => {
 	const years = [2017, 2018, 2019, 2020, 2021];
@@ -19,21 +22,12 @@ const Auto = () => {
 	const addYearCar = useAddYearCar();
 	const addBrand = useAddBrand();
 	const addGas = useAddGas();
-
 	const name = useName();
-	const propsAño = {
-		nombre: "Año",
-		tipo: "string",
-		max: 9,
-		value: "simple",
-	};
-	const propsMarca = {
-		nombre: "Marca",
-		tipo: "string",
-		max: 9,
-		value: "simple",
-	};
+	const addAmount = useAddAmount();
+	const [amount, setAmount] = React.useState(14300);
+
 	function goPlan() {
+		addAmount(amount);
 		navigate("/plan");
 	}
 
@@ -97,17 +91,27 @@ const Auto = () => {
 					<div className="auto__gas--question">¿Tu auto es a gas?</div>
 					<div className="auto__gas--radios" onChange={onChangeValue}>
 						<input type="radio" name="gas" value="si" />
-						si<br></br>
+						si
+						<br />
 						<input type="radio" name="gas" value="no" />
 						no
 					</div>
 				</div>
+				<hr />
 				<div className="auto__secure">
 					<div className="auto__secure--details">
 						<span>Indica la suma asegurada</span>
 						<span>Min $12.500 Max $16.500</span>
 					</div>
-					<div className="auto__secure--amount">$14.300</div>
+					<div className="auto__secure--amount">
+						<img
+							src={remove}
+							alt="remove"
+							onClick={() => setAmount(amount - 100)}
+						/>
+						$ {amount}
+						<img src={add} alt="add" onClick={() => setAmount(amount + 100)} />
+					</div>
 				</div>
 				<button className="auto__button" onClick={goPlan}>
 					continuar

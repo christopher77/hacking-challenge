@@ -5,7 +5,17 @@ import "./Plan.scss";
 import back from "../../images/icon_Back.png";
 import shield from "../../images/shield.svg";
 import check from "../../images/ic_check.png";
+import {
+	useLicensePlate,
+	useBrand,
+	useYearCar,
+} from "../../redux/selectors/selectors";
+
 const Plan = () => {
+	const licensePlate = useLicensePlate();
+	const brand = useBrand();
+	const yearCar = useYearCar();
+
 	return (
 		<div className="plan__container">
 			<Aside />
@@ -20,8 +30,10 @@ const Plan = () => {
 					<span>Conoce las coberturas para su plan</span>
 				</div>
 				<div className="details">
-					<div className="details__placa">placa C2U-114</div>
-					<div className="details__model">Wolkswagen 2019 Golf</div>
+					<div className="details__placa">Placa {licensePlate}</div>
+					<div className="details__model">
+						{brand} {yearCar}
+					</div>
 					<a href="#" className="details__link">
 						editar
 					</a>

@@ -17,10 +17,6 @@ function HomeData(props) {
 	const addCellphone = useAddCellphone();
 	const addLicensePlate = useAddLicensePlate();
 
-	// useEffect(() => {
-	// 	console.log("caeidss", cardID);
-	// }, [cardID]);
-
 	const propsDocument = {
 		nombre: "Nro. de doc",
 		tipo: "string",
