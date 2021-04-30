@@ -27,12 +27,12 @@ $blue: #2f80ed;
 }
 
 .message {
-	grid-column: 6/ 11;
+	grid-column: 6/ 10;
 	grid-row: 2 / 9;
 	padding: 5rem;
 
 	display: grid;
-	grid-template-rows: 10vh repeat(2, 8vh) 6vh;
+	grid-template-rows: 9vh 10vh 15vh 6vh;
 	grid-row-gap: 1vh;
 	align-items: center;
 	font-family: Lato;
@@ -41,13 +41,15 @@ $blue: #2f80ed;
 		font-size: 5vh;
 		color: $red;
 	}
-	
+
 	&__subtitle {
 		font-size: 4vh;
 	}
 
 	&__content {
 		font-family: Roboto;
+		font-size: 2vh;
+		padding-bottom: 4vh;
 	}
 }
 

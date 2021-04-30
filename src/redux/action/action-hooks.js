@@ -11,6 +11,7 @@ import {
 	addLicensePlate,
 	addYearCar,
 	addName,
+	addCoverage,
 } from "./actions";
 
 export function useAddAmount() {
@@ -22,6 +23,7 @@ export function useAddBrand() {
 	const dispatch = useDispatch();
 	return React.useCallback((brand) => dispatch(addBrand(brand)), [dispatch]);
 }
+
 export function useAddCellphone() {
 	const dispatch = useDispatch();
 	return React.useCallback((cellphone) => dispatch(addCellphone(cellphone)), [
@@ -46,6 +48,7 @@ export function useAddLicensePlate() {
 		[dispatch]
 	);
 }
+
 export function useAddYearCar() {
 	const dispatch = useDispatch();
 	return React.useCallback((yearCar) => dispatch(addYearCar(yearCar)), [
@@ -61,4 +64,11 @@ export function useReset() {
 export function useAddName() {
 	const dispatch = useDispatch();
 	return React.useCallback((name) => dispatch(addName(name)), [dispatch]);
+}
+
+export function useAddCoverage() {
+	const dispatch = useDispatch();
+	return React.useCallback((coverage) => dispatch(addCoverage(coverage)), [
+		dispatch,
+	]);
 }

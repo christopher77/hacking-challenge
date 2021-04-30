@@ -57,7 +57,12 @@ function addName(name) {
 		payload: name,
 	};
 }
-
+function addCoverage(coverage) {
+	return {
+		type: "ADD_COVERAGE",
+		payload: coverage,
+	};
+}
 export {
 	reset,
 	addCardID,
@@ -68,4 +73,5 @@ export {
 	addGas,
 	addAmount,
 	addName,
+	addCoverage,
 };

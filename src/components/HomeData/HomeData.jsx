@@ -8,7 +8,7 @@ import {
 	useAddLicensePlate,
 } from "../../redux/action/action-hooks";
 
-function HomeData(props) {
+function HomeData() {
 	const [cardID, setCardID] = React.useState("");
 	const [cellphone, setCellphone] = React.useState("");
 	const [placa, setPlaca] = React.useState("");

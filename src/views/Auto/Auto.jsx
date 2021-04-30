@@ -19,7 +19,7 @@ import Combo from "../../components/Combo/Combo";
 
 const Auto = () => {
 	const years = [2017, 2018, 2019, 2020, 2021];
-	const brands = ["volkswagen", "Toyota", "Mercedes", "Ferrari"];
+	const brands = ["Wolkswagen", "Toyota", "Mercedes", "Ferrari"];
 	const addYearCar = useAddYearCar();
 	const addBrand = useAddBrand();
 	const addGas = useAddGas();
@@ -28,8 +28,8 @@ const Auto = () => {
 	const name = useName();
 	const [amount, setAmount] = React.useState(14300);
 	const [showModal, setShowModal] = React.useState(false);
-	const [brand, setBrand] = React.useState("");
-	const [year, setYear] = React.useState("");
+	const [brand, setBrand] = React.useState("Wolkswagen");
+	const [year, setYear] = React.useState("2017");
 
 	const propsBrand = {
 		array: brands,

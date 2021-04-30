@@ -16,26 +16,50 @@ import choque from "../../images/icon_damage.png";
 import perdida from "../../images/icon_perdidatotal.svg";
 import chevron from "../../images/chevrot.png";
 import circle_add from "../../images/circle_add.png";
+import { useAddCoverage } from "../../redux/action/action-hooks";
 
 const Plan = () => {
 	const licensePlate = useLicensePlate();
 	const brand = useBrand();
 	const yearCar = useYearCar();
 
-	const [buttonLabel, setButtonLabel] = React.useState("Agregar");
+	const [buttonCrush, setButtonCrush] = React.useState("agregar");
+	const [buttonAccident, setButtonAccident] = React.useState("agregar");
+	const [buttonRobbery, setButtonRobbery] = React.useState("agregar");
 	const [coverageAmount, setCoverageAmount] = React.useState(20);
 
+	const addCoverage = useAddCoverage();
+
 	function handleClickRobbery() {
-		setCoverageAmount(coverageAmount + 15);
+		if (buttonRobbery === "agregar") {
+			setCoverageAmount(coverageAmount + 15);
+			setButtonRobbery("quitar");
+		} else {
+			setCoverageAmount(coverageAmount - 15);
+			setButtonRobbery("agregar");
+		}
 	}
 	function handleClickCrush() {
-		setCoverageAmount(coverageAmount + 20);
+		if (buttonCrush === "agregar") {
+			setCoverageAmount(coverageAmount + 20);
+			setButtonCrush("quitar");
+		} else {
+			setCoverageAmount(coverageAmount - 20);
+			setButtonCrush("agregar");
+		}
 	}
 	function handleClickAccident() {
-		setCoverageAmount(coverageAmount + 50);
+		if (buttonAccident === "agregar") {
+			setCoverageAmount(coverageAmount + 50);
+			setButtonAccident("quitar");
+		} else {
+			setCoverageAmount(coverageAmount - 50);
+			setButtonAccident("agregar");
+		}
 	}
 
 	function gotoSuccess() {
+		addCoverage(coverageAmount);
 		navigate("/success");
 	}
 
@@ -85,7 +109,7 @@ const Plan = () => {
 					</div>
 					<div className="coverages__add" onClick={handleClickRobbery}>
 						<img src={circle_add} alt="add coverage" />
-						<button className="coverages__button">{buttonLabel}</button>
+						<button className="coverages__button">{buttonRobbery}</button>
 					</div>
 					<hr />
 					<div className="coverages__item">
@@ -97,7 +121,7 @@ const Plan = () => {
 					</div>
 					<div className="coverages__add" onClick={handleClickCrush}>
 						<img src={circle_add} alt="add coverage" />
-						<button className="coverages__button">{buttonLabel}</button>
+						<button className="coverages__button">{buttonCrush}</button>
 					</div>
 					<hr />
 					<div className="coverages__item">
@@ -109,7 +133,7 @@ const Plan = () => {
 					</div>
 					<div className="coverages__add" onClick={handleClickAccident}>
 						<img src={circle_add} alt="add coverage" />
-						<button className="coverages__button">{buttonLabel}</button>
+						<button className="coverages__button">{buttonAccident}</button>
 					</div>
 					<hr />
 				</div>

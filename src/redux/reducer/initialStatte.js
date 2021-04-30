@@ -1,5 +1,5 @@
 const initialState = {
-	name:"",
+	name: "",
 	cardID: "",
 	cellphone: "",
 	licensePlate: "",
@@ -7,6 +7,7 @@ const initialState = {
 	brand: "",
 	gas: false,
 	amount: 0,
+	coverage: 0,
 	// coverage: 0,
 };
 

@@ -51,6 +51,12 @@ function reducer(state = initialState, action = {}) {
 				amount: action.payload,
 			};
 		}
+		case "ADD_COVERAGE": {
+			return {
+				...state,
+				coverage: action.payload,
+			};
+		}
 		default: {
 			return state;
 		}
