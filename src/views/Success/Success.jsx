@@ -13,7 +13,7 @@ function Success() {
 				<div className="message__subtitle">
 					Cuenta con nosotros para proteger tu vehiculo
 				</div>
-				<p className="message__p">
+				<p className="message__content">
 					Enviaremos la confirmación de compra de tu Plan Vehicular Tracking a
 					tu correo:<br></br> joel.sanchez@gmail.com
 				</p>

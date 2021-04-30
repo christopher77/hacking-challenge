@@ -13,7 +13,8 @@ $white: #f7f8fc;
 	padding-left: 5vw;
 	padding-right: 5vw;
 	opacity: 90%;
-	// z-index: 5;
+	border: 3px solid $white;
+
 	&__info {
 		display: flex;
 		align-items: center;

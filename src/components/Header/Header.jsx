@@ -6,7 +6,7 @@ import phone from "../../images/ic_phone.png";
 const Header = () => {
 	return (
 		<div className="header">
-			<img src={logo} alt="" />
+			<img src={logo} alt="logo" />
 			<div className="header__info">
 				<div className="header__question">¿Tienes alguna duda?</div>
 				<div className="header__number">

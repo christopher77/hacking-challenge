@@ -1,4 +1,6 @@
 $red: #ef3340;
+$white: #f7f8fc;
+$blue: #2f80ed;
 
 .success__container {
 	display: grid;
@@ -7,11 +9,12 @@ $red: #ef3340;
 }
 
 .success__left {
-	background-color: #f7f8fc;
+	background-color: $white;
 	grid-column: 1/ 5;
 	grid-row: 2/ 12;
 	margin-right: 6vw;
 }
+
 .success__image {
 	grid-column: 2/ 6;
 	grid-row: 2 / 9;
@@ -22,6 +25,7 @@ $red: #ef3340;
 	margin-top: 5rem;
 	z-index: 1;
 }
+
 .message {
 	grid-column: 6/ 11;
 	grid-row: 2 / 9;
@@ -37,25 +41,23 @@ $red: #ef3340;
 		font-size: 5vh;
 		color: $red;
 	}
+	
 	&__subtitle {
 		font-size: 4vh;
 	}
-	&__blue {
-		color: #2f80ed;
-	}
 
-	&__p {
-		// text-align: justify;
+	&__content {
 		font-family: Roboto;
 	}
 }
+
 .button {
 	width: 45%;
 	height: 100%;
 	justify-self: self-start;
 	border-radius: 8px;
 	color: #fff;
-	background-color: #ef3340;
+	background-color: $red;
 	border: none;
 	outline: none;
 	cursor: pointer;

@@ -1,5 +1,5 @@
 import { navigate } from "@reach/router";
-import React, { useEffect } from "react";
+import React from "react";
 import SimpleInput from "../SimpleInput/SimpleInput";
 import "./HomeData.scss";
 import {
@@ -19,21 +19,21 @@ function HomeData(props) {
 
 	const propsDocument = {
 		nombre: "Nro. de doc",
-		tipo: "string",
+		tipo: "number",
 		max: 8,
 		complex: true,
 		setProperty: setCardID,
 	};
 	const propsCellphone = {
 		nombre: "Celular",
-		tipo: "string",
+		tipo: "number",
 		max: 9,
 		complex: false,
 		setProperty: setCellphone,
 	};
 	const propsPlaca = {
 		nombre: "Placa",
-		tipo: "string",
+		tipo: "text",
 		max: 6,
 		complex: false,
 		setProperty: setPlaca,

@@ -3,11 +3,14 @@ import React from "react";
 
 function SimpleInput(props) {
 	const setProperty = props.setProperty;
+	const [realValue, setRealValue] = React.useState("");
 
 	function onChangeInput(event) {
+		setRealValue(event.target.value.replace(/\D/g, ""));
+		setProperty(realValue);
+	}
+	function onChangeInput2(event) {
 		setProperty(event.target.value);
-		// const realValue = event.target.value;
-		// realValue.match(/[0-9]{8}$/) ? setProperty(realValue) : console.log("no");
 	}
 
 	return props.complex ? (
@@ -22,9 +25,10 @@ function SimpleInput(props) {
 				<input
 					className="identification__input"
 					maxLength={props.max}
-					type={props.tipo}
+					type="text"
 					onChange={onChangeInput}
 					autoFocus={true}
+					value={realValue}
 					required
 				></input>
 				<label className="identification__label">{props.nombre}</label>
@@ -33,13 +37,24 @@ function SimpleInput(props) {
 	) : (
 		<div className="wrapper">
 			<div className="wrapper__group">
-				<input
-					className="wrapper__input"
-					maxLength={props.max}
-					onChange={onChangeInput}
-					type={props.tipo}
-					required
-				/>
+				{props.tipo === "number" ? (
+					<input
+						className="wrapper__input"
+						maxLength={props.max}
+						onChange={onChangeInput}
+						value={realValue}
+						type="text"
+						required
+					/>
+				) : (
+					<input
+						className="wrapper__input"
+						maxLength={props.max}
+						onChange={onChangeInput2}
+						type="text"
+						required
+					/>
+				)}
 				<label className="wrapper__label">{props.nombre}</label>
 			</div>
 		</div>

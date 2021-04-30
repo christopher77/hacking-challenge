@@ -36,20 +36,26 @@ const Plan = () => {
 				</div>
 				<div className="plan__title">
 					<div className="plan__title--main">Mira las coberturas</div>
-					<span>Conoce las coberturas para su plan</span>
-				</div>
-				<div className="details">
-					<div className="details__placa">Placa {licensePlate}</div>
-					<div className="details__model">
-						{brand} {yearCar}
+					<div className="plan__comment">
+						Conoce las coberturas para su plan
 					</div>
-					<a href="#" className="details__link">
-						editar
-					</a>
+				</div>
+
+				<div className="details">
+					<div className="details__table">
+						<div className="details__placa">Placa {licensePlate}</div>
+						<div className="details__model">
+							{brand} {yearCar}
+						</div>
+						<a href="#" className="details__link">
+							editar
+						</a>
+					</div>
 					<div className="details__image"></div>
 				</div>
+
 				<div className="plan__coverage">
-					<div>Agrega o quita coberturas</div>
+					<div className="plan__subtitle">Agrega o quita coberturas</div>
 				</div>
 				<div className="plan__options">
 					<div className="plan__options--one">protege a tu auto</div>
@@ -74,6 +80,7 @@ const Plan = () => {
 					</div>
 				</div>
 			</div>
+
 			<div className="right">
 				<div className="right__price">
 					<div>

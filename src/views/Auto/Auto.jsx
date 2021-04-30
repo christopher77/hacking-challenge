@@ -6,7 +6,6 @@ import car from "../../images/icon_car.svg";
 import back from "../../images/icon_Back.png";
 import { navigate } from "@reach/router";
 import { useName } from "../../redux/selectors/selectors";
-import chevron from "../../images/chevrot.png";
 import {
 	useAddYearCar,
 	useAddBrand,
@@ -16,6 +15,7 @@ import {
 import add from "../../images/add.png";
 import remove from "../../images/remove.png";
 import Modal from "../../components/ui/modal";
+import Combo from "../../components/Combo/Combo";
 
 const Auto = () => {
 	const years = [2017, 2018, 2019, 2020, 2021];
@@ -23,29 +23,35 @@ const Auto = () => {
 	const addYearCar = useAddYearCar();
 	const addBrand = useAddBrand();
 	const addGas = useAddGas();
+	const addAmount = useAddAmount();
 
 	const name = useName();
-	const addAmount = useAddAmount();
 	const [amount, setAmount] = React.useState(14300);
 	const [showModal, setShowModal] = React.useState(false);
+	const [brand, setBrand] = React.useState("");
+	const [year, setYear] = React.useState("");
 
-	function handleChangeYear(event) {
-		console.log(event.target.value);
-		addYearCar(event.target.value);
-	}
+	const propsBrand = {
+		array: brands,
+		name: "brand",
+		setProperty: setBrand,
+	};
 
-	function handleChangeBrand(event) {
-		console.log(event.target.value);
-		addBrand(event.target.value);
-	}
+	const propsYear = {
+		array: years,
+		name: "year",
+		setProperty: setYear,
+	};
+
 	function onChangeValue(event) {
-		console.log(event.target.value);
 		const gas = event.target.value === "si" ? true : false;
 		addGas(gas);
 	}
 
 	function goPlan() {
 		if (amount <= 16500 && amount >= 12500) {
+			addYearCar(year);
+			addBrand(brand);
 			addAmount(amount);
 			navigate("/plan");
 		} else {
@@ -66,49 +72,37 @@ const Auto = () => {
 			<Aside step={1} />
 			<div className="auto">
 				<div className="auto__back" onClick={() => navigate("/")}>
-					<img src={back} alt="back" className="auto__back--image" />
+					<img className="auto__back--image" src={back} alt="back" />
 					<span>volver</span>
 				</div>
 				<div className="auto__title">
-					¡Hola,<span className="auto__title--red"> {name}!</span>
+					¡Hola,
+					<span className="auto__title--red"> {name}!</span>
 					<p className="auto__simple">Completa los datos de tu auto</p>
 				</div>
-
-				<div className="combo">
-					<select
-						className="combo__select"
-						onChange={handleChangeYear}
-						name="year"
-						id="year"
-					>
-						{years.map((year) => (
-							<option value={year}>{year}</option>
-						))}
-					</select>
-					<img src={chevron} alt="chevron" className="combo__chevron" />
-				</div>
-
-				<div className="combo">
-					<select
-						className="combo__select"
-						onChange={handleChangeBrand}
-						name="brand"
-						id="brand"
-					>
-						{brands.map((brand) => (
-							<option value={brand}>{brand}</option>
-						))}
-					</select>
-					<img src={chevron} alt="chevron" className="combo__chevron" />
-				</div>
+				<Combo {...propsYear} />
+				<Combo {...propsBrand} />
 				<div className="auto__gas">
-					<div className="auto__gas--question">¿Tu auto es a gas?</div>
-					<div className="auto__gas--radios" onChange={onChangeValue}>
-						<input type="radio" name="gas" value="si" />
-						si
-						<br />
-						<input type="radio" name="gas" value="no" />
-						no
+					<div className="auto__question">¿Tu auto es a gas?</div>
+					<div className="auto__radios" onChange={onChangeValue}>
+						<div className="auto__option">
+							<input
+								className="auto__option--input"
+								type="radio"
+								name="gas"
+								value="si"
+							/>
+							<span>Sí</span>
+						</div>
+						<div className="auto__option">
+							<input
+								className="auto__option--input"
+								type="radio"
+								name="gas"
+								value="no"
+							/>
+							<span>No</span>
+						</div>
 					</div>
 				</div>
 				<hr />
@@ -138,7 +132,7 @@ const Auto = () => {
 					¿No encuentras el modelo?
 					<img src={car} alt="" />
 				</div>
-				<a href="#" className="help__link">
+				<a className="help__link" href="#">
 					click aqui
 				</a>
 			</div>
