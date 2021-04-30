@@ -8,7 +8,7 @@ $blue: #6f7dff;
 	display: grid;
 
 	grid-template-columns: repeat(10, 10vw);
-	grid-template-rows: 7vh 5vh repeat(8, 10vh) 8vh;
+	grid-template-rows: 7vh 5vh repeat(8, 10vh) 12vh;
 }
 
 .plan {
@@ -16,7 +16,7 @@ $blue: #6f7dff;
 	grid-row: 3/ 11;
 
 	display: grid;
-	grid-template-rows: 3vh 10vh 20vh 5vh 6vh repeat(3, 10vh);
+	grid-template-rows: 3vh 10vh 20vh 5vh 6vh 22vh;
 	grid-row-gap: 3vh;
 	width: 90%;
 
@@ -46,8 +46,8 @@ $blue: #6f7dff;
 	}
 	&__options {
 		display: flex;
-		font-size: 2vh;
-		text-align: justify;
+		font-size: 1.5vh;
+		// text-align: justify;
 		text-transform: uppercase;
 	}
 }
@@ -61,7 +61,7 @@ $blue: #6f7dff;
 	&__table {
 		grid-column: 1/ 4;
 		grid-row: 2/ 5;
-		
+
 		border-style: solid;
 		border-color: $light-grey-1;
 		border-radius: 10px;
@@ -106,6 +106,36 @@ $blue: #6f7dff;
 		width: 100%;
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
+		padding-top: 2vh;
+	}
+
+	&__title {
+		font-size: 2.5vh;
+	}
+
+	&__image {
+		height: 20%;
+	}
+	&__add {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		height: 2vh;
+		padding-bottom: 2vh;
+		cursor: pointer;
+	}
+	
+	&__button {
+		height: 100%;
+		border-radius: 10px;
+		color: $blue;
+		background-color: $white;
+		border: none;
+		outline: none;
+		cursor: pointer;
+		text-transform: uppercase;
+		margin-left: 0.5vw;
 	}
 }
 

@@ -21,10 +21,10 @@ const Home = () => {
 			console.log(error);
 		}
 	};
-	
+
 	return (
 		<div className="container">
-			<Header />
+			<Header detail={false} />
 			<div className="home__image" />
 			<HomeData />
 		</div>
